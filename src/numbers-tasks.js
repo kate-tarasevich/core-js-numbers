@@ -568,8 +568,11 @@ function getIntegerPartNumber(number) {
  * 1, 2, 3       => 6
  * 0.1, 0.2, 0.3 => 0.6
  */
-function getSumOfNumbers(/* x1, x2, x3 */) {
-  throw new Error('Not implemented');
+function getSumOfNumbers(x1, x2, x3) {
+  let result;
+  if (Number.isInteger(x1 + x2 + x3) === true) result = x1 + x2 + x3;
+  else result = (x1 + x2 + x3).toFixed(1);
+  return result;
 }
 
 /**
