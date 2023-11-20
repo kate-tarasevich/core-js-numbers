@@ -617,9 +617,10 @@ function getRandomInteger(min, max) {
  * @example:
  * 3, 4 => 5
  */
-function getHypotenuse(/* a, b */) {
-  // return Math.sqrt(a ** 2 + b ** 2);
-  throw new Error('Not implemented');
+function getHypotenuse(a, b) {
+  if (!Number.isSafeInteger(a) || !Number.isSafeInteger(b))
+    return Number.MAX_VALUE;
+  return Math.hypot(a, b);
 }
 
 /**
